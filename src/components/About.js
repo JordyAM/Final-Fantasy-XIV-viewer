@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About(props) {
+export default function About(props) {
     return (
         <div>
             Testing about
@@ -8,4 +8,3 @@ function About(props) {
     );
 }
 
-export default About;
