@@ -29,15 +29,20 @@ function App() {
 
   return (
     <div >
-      <header>
+      <nav>
         <h1><Link to="/">FFXIV Character Viewer</Link></h1>
-        </header>
+        <h1><Link to="/components/Jobs">Classes/Jobs</Link></h1>
+        <h1><Link to="/components/Minions">Minions</Link></h1>
+        <h1><Link to="./components/About">About</Link></h1>
+        </nav>
         <main>
      
       <Routes>
-        <Route path="/" element={<Character />}></Route>
-      </Routes>
-       
+        <Route path="/" element={<Character />}/>
+        <Route path='/components/Jobs' element={<Jobs />} />
+        <Route path='/components/Minions' element={<Minions />} /> 
+        <Route path='/components/About' element= {<About />} />
+       </Routes>
       </main>
      
     </div>
