@@ -8,24 +8,24 @@ import About from './components/About';
 import Character from './components/Character';
 function App() {
 
-  
-  // const [charData, setCharData] = useState([{}])
+  const [data, setData] = useState([]);
+  const [charData, setCharData] = useState();
+
+  useEffect(() => {fetch('https://xivapi.com/character/5030778')
+.then((res) => res.json())
+.then((res) => {
+setCharData(res);
+
+})
+.catch(console.error);}, []);
+
+if (!charData) {
+  return <div>Loading...</div>
+}
+// console.log(charData);
+// console.log(data);
 
 
-
-
-// useEffect(() => {fetch('https://xivapi.com/character/')
-// .then((res) => res.json())
-// .then((res) => {
-//   setData(res);
-//   console.log(data);
-
-// })
-// .catch(console.error);}, []);
-
-// if (!data) {
-//   return <div>Loading...</div>
-// }
 
   return (
     <div >
@@ -38,8 +38,8 @@ function App() {
         <main>
      
       <Routes>
-        <Route path="/" element={<Character />}/>
-        <Route path='/components/Jobs' element={<Jobs />} />
+        <Route path="/" element={<Character charData={charData} />}/>
+        <Route path='/components/Jobs' element={<Jobs charData={charData}/>} />
         <Route path='/components/Minions' element={<Minions />} /> 
         <Route path='/components/About' element= {<About />} />
        </Routes>

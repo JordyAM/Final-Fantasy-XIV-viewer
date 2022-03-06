@@ -2,8 +2,11 @@ import React from 'react';
 
 function Jobs(props) {
     return (
-        <div>
-            Testing Jobs
+        <div className="job-container">
+            {CharacterData.map({charData => (
+                
+            )})}
+
         </div>
     );
 }
