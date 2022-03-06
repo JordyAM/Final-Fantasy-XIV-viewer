@@ -6,13 +6,13 @@ export default function Character(props) {
     const [data, setData] = useState([]);
     const [charData, setCharData] = useState();
 
-    useEffect(() => {fetch('https://xivapi.com/character/search?name=Dural Quartermain')
+    useEffect(() => {fetch('https://xivapi.com/character/5030778?data=MIMO')
 .then((res) => res.json())
 .then((res) => {
   setCharData(res);
-//   console.log(data);
-  //  fetch(`https://xivapi.com/character/${charData.Results[0].ID}`).then((res) => res.json()).then((res) => {
-  //   setData(res);
+  // console.log(data);
+  //  fetch(`https://xivapi.com/character/${charData.Results[0].ID}?private_key=8a594172894c4dcaa464c08f55358b41f45b593131264ecc8ec1cea96433ee13`).then((cont) => cont.json()).then((cont) => {
+  //   setData(cont);
     
   // })
 })
@@ -31,9 +31,9 @@ if (!charData) {
         src="https://img2.finalfantasyxiv.com/f/ffefaa778f4cd2494c2ade21ec765637_2e97c13fdd593d15d543093f8a37b6f0fc0_96x96.jpg?1646437687"
         
         />
-             <p>Dural Quartermain </p>
+             {/* <p>{charData.Results[0].Name}</p> */}
              <div>
-               <img src={charData.Results[0].Avatar}/>
+               {/* <img src={charData.Results[0].Avatar}/> */}
                </div>
                
              
