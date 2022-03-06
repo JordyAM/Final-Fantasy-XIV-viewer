@@ -6,7 +6,7 @@ export default function Character(props) {
     const [data, setData] = useState([]);
     const [charData, setCharData] = useState();
 
-    useEffect(() => {fetch('https://xivapi.com/character/5030778?data=MIMO')
+    useEffect(() => {fetch('https://xivapi.com/character/5030778')
 .then((res) => res.json())
 .then((res) => {
   setCharData(res);
@@ -27,14 +27,20 @@ if (!charData) {
 
     return (
         <div>
-        //       <img
+        {/* //       <img
         src="https://img2.finalfantasyxiv.com/f/ffefaa778f4cd2494c2ade21ec765637_2e97c13fdd593d15d543093f8a37b6f0fc0_96x96.jpg?1646437687"
         
-        />
-             {/* <p>{charData.Results[0].Name}</p> */}
-             <div>
-               {/* <img src={charData.Results[0].Avatar}/> */}
-               </div>
+        /> */}
+          <p>{charData.Character.Name}</p>
+          <div>
+            <img src={charData.Character.Avatar}/>
+          </div>
+        
+        Free Company: {charData.Character.FreeCompanyName}
+        Nameday:{charData.Character.Nameday}
+        <div className="portrait-container">
+          <img src={charData.Character.Portrait} />
+        </div>
                
              
         </div>
