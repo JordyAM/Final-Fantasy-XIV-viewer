@@ -1,11 +1,18 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 
-function Minions(props) {
+function Minions({charData}) {
     return (
         <div>
-            Testing Minions and Mounts
-        </div>
-    );
-}
+          {charData.map(data => (
+            <img src={data.Minions.Icon} data-tip data-for="minionTip"/>
+            <ReactTooltip id="minionTip">{data.Minions.Name}</ReactTooltip>
 
+           
+))
+        
+    
+}
+</div>
+    )}
 export default Minions;

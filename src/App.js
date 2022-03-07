@@ -11,7 +11,7 @@ function App() {
   const [data, setData] = useState([]);
   const [charData, setCharData] = useState();
 
-  useEffect(() => {fetch('https://xivapi.com/character/5030778')
+  useEffect(() => {fetch('https://xivapi.com/character/5030778?data=MIMO')
 .then((res) => res.json())
 .then((res) => {
 setCharData(res);
@@ -22,10 +22,8 @@ setCharData(res);
 if (!charData) {
   return <div>Loading...</div>
 }
-// console.log(charData);
+console.log(charData);
 // console.log(data);
-
-
 
   return (
     <div >
@@ -40,7 +38,7 @@ if (!charData) {
       <Routes>
         <Route path="/" element={<Character charData={charData} />}/>
         <Route path='/components/Jobs' element={<Jobs charData={charData}/>} />
-        <Route path='/components/Minions' element={<Minions />} /> 
+        <Route path='/components/Minions' element={<Minions charData={charData}/>} /> 
         <Route path='/components/About' element= {<About />} />
        </Routes>
       </main>
