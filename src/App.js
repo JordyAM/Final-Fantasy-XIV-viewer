@@ -9,7 +9,7 @@ import Character from './components/Character';
 function App() {
 
   const [data, setData] = useState([]);
-  const [charData, setCharData] = useState();
+  const [charData, setCharData] = useState(null);
 
   useEffect(() => {fetch('https://xivapi.com/character/5030778?data=MIMO')
 .then((res) => res.json())
@@ -19,22 +19,23 @@ setCharData(res);
 })
 .catch(console.error);}, []);
 
-if (!charData) {
-  return <div>Loading...</div>
-}
-console.log(charData);
+// if (!charData) {
+//   return <div>Loading...</div>
+// }
+// console.log(charData);
 // console.log(data);
 
   return (
     <div >
-      <nav>
+      <nav className='navigation'>
         <h1><Link to="/">FFXIV Character Viewer</Link></h1>
         <h1><Link to="/components/Jobs">Classes/Jobs</Link></h1>
         <h1><Link to="/components/Minions">Minions</Link></h1>
         <h1><Link to="./components/About">About</Link></h1>
         </nav>
+
         <main>
-     
+    
       <Routes>
         <Route path="/" element={<Character charData={charData} />}/>
         <Route path='/components/Jobs' element={<Jobs charData={charData}/>} />

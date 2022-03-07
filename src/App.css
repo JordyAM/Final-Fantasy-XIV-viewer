@@ -37,11 +37,3 @@
   }
 }
 
-nav{
-  background-color: chartreuse;
-  height: 50px;
-  padding: 20px;
-  text-align:justify;
-  display: flex;
-  justify-content: space-around;
-}

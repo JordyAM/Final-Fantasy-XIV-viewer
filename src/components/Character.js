@@ -6,10 +6,10 @@ export default function Character({charData}) {
    
 
     return (
-        <div>
-          <p>{charData.Character.Name}</p>
+        <div className="character-container">
+          <h1>{charData.Character.Name}</h1>
           <div>
-            <img src={charData.Character.Avatar}/>
+            {/* <img src={charData.Character.Avatar}/> */}
           </div>
         
         Free Company: {charData.Character.FreeCompanyName}
