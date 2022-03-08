@@ -9,23 +9,23 @@ const Jobs = ( {charData} ) => {
  if (!charData) {
   return <div>Loading...</div>
 }
-
+const iconUrl= 'https://xivapi.com/';
     return (
       <div className="job-container">
-        <div className="char-image">
-          <img src={charData.Character.Portrait} />
+        <div className="character-portrait">
+          <img src={charData.Character.Avatar} />
+          <h1>Dural Quartermain</h1>
         </div>
-        <div className="job">
+        <div className="job-list">
           {charData.Character.ClassJobs.map(char => (
-            <div>  <p>  <b>{char.Name} {" "}</b>{"- "} 
-            Level: {char.Level}
-            Exp: {char.ExpLevel}/{char.ExpLevelMax} 
+            <div> 
+            <p>
+            <img src={iconUrl + char.Job.Icon} width="30" height="30" />
+            <b>{char.Name} {" "}</b>{"- "} 
+            <b>Level:</b> {char.Level} {" "}
+            <b>Exp:</b> {char.ExpLevel}/{char.ExpLevelMax} 
             </p> </div>
           ))}
-         
-           
- 
-
  </div>
         </div>
     );

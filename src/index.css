@@ -19,11 +19,13 @@ code {
   text-align:justify;
   display: flex;
   justify-content: space-around;
-  text-decoration:aliceblue;
-  
+  margin-bottom: 15px;
   
 }
 
+h2{
+  text-align: center;
+}
 a {
   text-decoration:none;
 }
@@ -38,9 +40,15 @@ img{
   align-items:center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   /* grid-template-rows: 1fr 1fr; */
+  
 }
 
-.portrait-container{
+.character-portrait{
+  grid-column: 2;
   justify-self: center;
+}
+
+.character-name{
+  margin: 20px;
 }
 
