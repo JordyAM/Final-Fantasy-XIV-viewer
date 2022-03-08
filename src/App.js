@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Route, Routes, Link} from 'react-router-dom'
 import React, {useState,useEffect} from 'react'
@@ -11,7 +10,7 @@ function App() {
 
   // const [data, setData] = useState([]);
   const [charData, setCharData] = useState(null);
-  const [charID, setCharID] = useState('');
+  const [charID, setCharID] = useState('5030778');
   
   useEffect(() => {
     getCharacter(charID);
@@ -43,8 +42,7 @@ function App() {
 if (!charData) {
   return <div>Loading...</div>
 }
-// console.log(charData);
-// console.log(data);
+
 
   return (
     <div >

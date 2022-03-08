@@ -80,6 +80,32 @@ img{
   color: antiquewhite;
 }
 
-.job-container{
-  /* background-color: aqua; */
+button {
+  background-color: antiquewhite;
+  border: 3px solid grey;
+  flex-grow: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+}
+
+input {
+  background-color: #262626;
+  border: 2px solid gray;
+  color: antiquewhite;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  line-height: inherit;
+  padding: 0.75rem 2em;
+  width: 100%;
+}
+
+input::placeholder {
+  
+}
+
+.character-form{
+  align-items: center;
+  display: flex;
 }

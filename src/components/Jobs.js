@@ -4,8 +4,6 @@ import {useState, useEffect} from 'react';
  
 const Jobs = ( {charData} ) => {
 
- console.log(charData);
-
  if (!charData) {
   return <div>Loading...</div>
 }
@@ -14,7 +12,7 @@ const iconUrl= 'https://xivapi.com/';
       <div className="job-container">
         <div className="character-avatar">
           <img src={charData.Character.Avatar} />
-          <h1>Dural Quartermain</h1>
+          <h1>{charData.Character.Name}</h1>
         </div>
         <div className="job-list">
           {charData.Character.ClassJobs.map(char => (
