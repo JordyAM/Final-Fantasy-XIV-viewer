@@ -11,7 +11,7 @@ function App() {
   const [data, setData] = useState([]);
   const [charData, setCharData] = useState(null);
 
-  useEffect(() => {fetch('https://xivapi.com/character/5030778?data=MIMO')
+  useEffect(() => {fetch('https://xivapi.com/character/5030778?extended=true')
 .then((res) => res.json())
 .then((res) => {
 setCharData(res);

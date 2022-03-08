@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Jupiter Bold', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -21,6 +21,7 @@ code {
   justify-content: space-around;
   text-decoration:aliceblue;
   
+  
 }
 
 a {
@@ -33,4 +34,13 @@ img{
 
 .character-container{
   display:grid;
+  justify-content: center;
+  align-items:center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
 }
+
+.portrait-container{
+  justify-self: center;
+}
+
