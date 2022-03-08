@@ -20,7 +20,8 @@ export default function Character({charData}) {
               <h3 className='title'>
               <img src={iconUrl + charData.Character.GrandCompany.Rank.Icon} />{" "}
               Grand Company:</h3>
-              <p className='name'>{charData.Character.GrandCompany.Company.Name}{" "}/{" "}
+              <p className='name'>
+              {charData.Character.GrandCompany.Company.Name}{" "}/{" "}
               {charData.Character.GrandCompany.Rank.Name}</p>
             </div>
           </div>
@@ -29,8 +30,11 @@ export default function Character({charData}) {
           </div>
           <div className="character-block">
             <div className="character-block-box">
-            <h3><img src={iconUrl + charData.Character.GuardianDeity.Icon} />{" "} 
-            Nameday:</h3>{charData.Character.Nameday}
+            <h3>
+            <img src={iconUrl + charData.Character.GuardianDeity.Icon} />{" "} 
+            Nameday:
+            </h3>
+            {charData.Character.Nameday}
             <h3>Guardien Deity:</h3>
             <p>{charData.Character.GuardianDeity.Name}</p>
             </div>

@@ -12,13 +12,13 @@ const Jobs = ( {charData} ) => {
 const iconUrl= 'https://xivapi.com/';
     return (
       <div className="job-container">
-        <div className="character-portrait">
+        <div className="character-avatar">
           <img src={charData.Character.Avatar} />
           <h1>Dural Quartermain</h1>
         </div>
         <div className="job-list">
           {charData.Character.ClassJobs.map(char => (
-            <div> 
+            <div className="job"> 
             <p>
             <img src={iconUrl + char.Job.Icon} width="30" height="30" />
             <b>{char.Name} {" "}</b>{"- "} 
