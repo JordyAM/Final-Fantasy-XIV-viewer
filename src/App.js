@@ -6,22 +6,43 @@ import Minions from './components/Minions';
 import Jobs from './components/Jobs';
 import About from './components/About';
 import Character from './components/Character';
+import SearchID from './components/SearchID';
 function App() {
 
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [charData, setCharData] = useState(null);
+  const [charID, setCharID] = useState('');
+  
+  useEffect(() => {
+    getCharacter(charID);
+  }, []);
 
-  useEffect(() => {fetch('https://xivapi.com/character/5030778?extended=true')
-.then((res) => res.json())
-.then((res) => {
-setCharData(res);
 
-})
-.catch(console.error);}, []);
+  function getCharacter(charID){
+    const url = `https://xivapi.com/character/${charID}?extended=true`;
 
-// if (!charData) {
-//   return <div>Loading...</div>
-// }
+  fetch(url)
+    .then((res) => res.json())
+    .then((res) => {
+      setCharData(res);
+      setCharID('');
+      })
+.catch(console.error);
+  }
+
+  function handleChange(event){
+    setCharID(event.target.value);
+  }
+
+  function handleSubmit(event){
+    event.preventDefault();
+    getCharacter(charID);
+  }
+// 
+  
+if (!charData) {
+  return <div>Loading...</div>
+}
 // console.log(charData);
 // console.log(data);
 
@@ -33,7 +54,13 @@ setCharData(res);
         <h1><Link to="/components/Minions">Minions</Link></h1>
         <h1><Link to="./components/About">About</Link></h1>
         </nav>
-
+      
+        <SearchID 
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          charID={charID}
+        />
+      
         <main>
     
       <Routes>
