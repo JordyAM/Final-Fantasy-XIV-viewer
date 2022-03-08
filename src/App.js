@@ -1,7 +1,6 @@
-import './App.css';
 import {Route, Routes, Link} from 'react-router-dom'
 import React, {useState,useEffect} from 'react'
-import Minions from './components/Minions';
+// import Minions from './components/Minions';
 import Jobs from './components/Jobs';
 import About from './components/About';
 import Character from './components/Character';
@@ -49,7 +48,7 @@ if (!charData) {
       <nav className='navigation'>
         <h1><Link to="/">FFXIV Character Viewer</Link></h1>
         <h1><Link to="/components/Jobs">Classes/Jobs</Link></h1>
-        <h1><Link to="/components/Minions">Minions</Link></h1>
+        {/* <h1><Link to="/components/Minions">Minions</Link></h1> */}
         <h1><Link to="./components/About">About</Link></h1>
         </nav>
       
@@ -64,7 +63,7 @@ if (!charData) {
       <Routes>
         <Route path="/" element={<Character charData={charData} />}/>
         <Route path='/components/Jobs' element={<Jobs charData={charData}/>} />
-        <Route path='/components/Minions' element={<Minions charData={charData}/>} /> 
+        {/* <Route path='/components/Minions' element={<Minions charData={charData}/>} />  */}
         <Route path='/components/About' element= {<About />} />
        </Routes>
       </main>
